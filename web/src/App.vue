@@ -6,16 +6,10 @@
 
   <div>
     <h1 class="h1" >{{ titulo }}</h1>
-    <!-- <ul class="list-group"> -->
       <div class="row">
       <div class="col" v-for="foto of fotos">
         
-        <div class="card imgs" style="width: 18rem;">
-  <img :src="foto.url" class="card-img-top" :alt="foto.titulo" >
-  <div class="card-body">
-    <h5 class="card-title">{{foto.titulo}}</h5>
-    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <panel :img="foto.url" :tile="foto.title"></panel>
   </div>
 </div>
 
@@ -27,7 +21,12 @@
 </template>
 
 <script>
+import Panel from '.components/Panel/Panel.vue'
 export default {
+  components: { 
+    Panel
+  },
+
   data()  {
     return {
       titulo: "Alurapic",
@@ -53,7 +52,7 @@ export default {
   list-style: none;
 }
 .imgs{
-  width: 320px;
+  /* width: 320px;*/
   margin: 15px
 }
 </style>
